@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+textarea,
+select {
+    appearance: none !important;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f8b918;
+}
+
+
+/* Reset ends */
+
+/* Sidebar design */
+
+#root {
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+}
+
+#sidebar {
+    width: 219px;
+    height: 100vh;
+    padding: 50px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#sidebar .logo {
+    margin-bottom: 152px;
+}
+
+#sidebar .logo img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 17px;
+}
+
+#sidebar .logo h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+#sidebar nav button {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sidebar nav button:hover,
+.stayActive {
+    border-radius: 15px;
+    background-color: #FFCA40;
+}
+
+/* main page design */
+
+#startingPage {
+    width: auto;
+    padding: 180px;
+    text-align: center;
+    background-color: #F3F3F3;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Lists */
+
+#editPage, #detailPage {
+    width: 514px;
+}
+
+#detailPage .listHeader{
+    border-bottom: 1px solid gray;
+    width: 85%;
+    margin-left: 3vw;
+    margin-bottom: 72px;
+    padding: 0 49px;
+    padding-top: 70px;
+}
+
+#editPage .listHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 49px;
+    padding-top: 70px;
+    margin-bottom: 114px;
+}
+
+#editPage .listHeader h3,
+#editPage .listHeader button, 
+#detailPage .listHeader h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 39px;
+    font-weight: bold;
+}
+
+#editPage .listHeader button {
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #F1F0F0;
+    font-size: 25px;
+}
+
+#editPage .listHeader button:hover {
+    background-color: #FFCA40;
+}
+
+#editPage .list {
+    height: 70vh;
+    padding: 5px 5px 49px 5px;
+    padding-left: 49px;
+    overflow-y: auto;
+}
+
+#editPage .list .listCard {
+    position: relative;
+    width: 404px;
+    height: 88px;
+    box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#editPage .list .listCard:hover {
+    background-color: #F6E9C5;
+}
+
+/* Editing Page */
+
+#detailPage {
+    height: 100vh;
+    width: 707px;
+    border-radius: 40px 0px 0px 40px;
+    background-color: #F3F3F3;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+    #root {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    #sidebar .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    #sidebar .logo img,
+    #sidebar nav button {
+        margin: 0;
+    }
+
+    #sidebar nav {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        padding-right: 10px;
+    }
+
+    #sidebar nav button {
+        width: 150px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    #startingPage {
+        height: 100vh;
+    }
+
+    #editPage {
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 425px) {
+
+    #sidebar {
+        height: 90px;
+        padding: 0;
+    }
+
+    #sidebar .logo {
+        flex-direction: column;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+
+    #sidebar .logo h4 {
+        font-size: 10px;
+    }
+
+    #sidebar nav {
+        column-gap: 1px;
+        padding-right: 10px;
+    }
+
+    #sidebar nav button {
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    #startingPage {
+        padding: 100px;
+    }
+
+    #startingPage h1 {
+        font-size: 20px;
+        padding: 0;
+    }
+
+    #editPage {
+        width: 100%;
+    }
+
+    #editPage .list .listCard {
+        width: 330px;
+    }
+}
+
+.popup .overlay{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%); 
+    width: 100%;
+    height:100vh;
+    z-index:1;
+    display:none;
+    background: rgba( 236, 175, 17, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.popup .content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 50%;
+    height:50%;
+    z-index:2;
+    text-align:center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background-color: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50px;
+   
+}
+
+.popup.active .overlay{
+    display:block;
+}
+
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#newPizzaForm{
+    font-family: 'Montserrat', sans-serif;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#newPizzaForm input{
+    font-family: 'Montserrat', sans-serif;
+    width:80%;
+    height:15%;
+    background-color: white;
+    text-align: center;
+    color:black;
+    border-radius: 20px;
+    font-size:200%;
+}
+
+#formButton {
+    font-family: 'Montserrat', sans-serif;
+    width:150px;
+    height:50px;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+
+#formButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+
+#formButton:active {
+	position:relative;
+	top:1px;
+}
+
+#pictureChooseBtn {
+    font-family: 'Montserrat', sans-serif;
+    width:200px;
+    height:52px;
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:black;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:16px 24px;
+    text-decoration:none;
+    text-shadow:0;
+}
+
+#pictureChooseBtn:hover {
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color:#ffab23;
+}
+
+#pictureChooseBtn:active {
+	position:relative;
+	top:1px;
+}
+  
+.activeBtn{
+    font-family: 'Montserrat', sans-serif;
+    width: 80px;
+    height: 45px;
+    background-color: green;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+.activeBtn:hover{
+    opacity: 0.9;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.red{
+    background-color: #FF4040;
+}
+
+#listCard{
+    border: 2px solid black;
+    width: 50%;
+}
+
+.circle{
+    position: absolute;
+    right: 3%;
+    top: 9%;
+    background-color: green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+.redCircle{
+    position: absolute;
+    right: 3%;
+    top: 9%;
+    background-color: #FF4040;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+/* DETAIL PAGE */
+.modderForm{
+    display: grid;
+    margin: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#modderName{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 27px;
+    margin-bottom: 50px;
+    color: black;
+}
+
+.modderLine{
+    width: 100%;
+    height: 1px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#detailPage h3{
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px;
+    display: inline-block;
+    width: 85%;
+}
+
+#modderDescription,
+#modderPrice{
+    width: 300px;
+    height: 50px;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.modderPictureNow{
+    width: 100px;
+}
+
+#modderPicture{
+    margin-bottom: 50px;
+}
+
+#sendButton{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    width: 132px;
+    height: 56px;
+    left: 20%;
+    font-weight: 700;
+    font-size: 20px;
+    background: #12CA3A;
+    border-radius: 15px;
+}
+
+#delete{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    width: 132px;
+    height: 56px;
+    left: 40%;
+    font-size: 20px;
+    background: #FF4040;
+    border-radius: 15px;
+}
+
+#sendButton:hover,
+#delete:hover{
+    opacity: 0.9;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.edit{
+    font-size:  50px;
+}
+
+.edit:hover{
+    color: #f8b918;
+}
+
+.editNow{
+    border: #222 solid 1px;
+}
+
+.inputFile{
+    display: none;
+}
+
+.editNow2{
+    display: inline;
+}
+
+.ordId{
+    font-size: 50px;
+}
+
+#detailPage{
+    position: relative;
+}
+
+#detailPage .custDet,
+#detailPage .custName,
+#detailPage .custAddr,
+#detailPage .ordInf,
+#detailPage .ordAmo,
+#detailPage .ordPizzNa,
+#detailPage .ordPri,
+#detailPage .ordTotPri,
+#detailPage .ordCompl,
+#detailPage .ordDel,
+#detailPage .pizzaCFOr{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2vw;
+    margin-left: 2vw;
+}
+
+#detailPage .custDet{
+    padding-top: 1.2vw;
+    margin-bottom: 1vw;
+    font-size: 27px;
+    /*border-top: 2px solid grey;*/
+    width: 87%;
+}
+
+#detailPage .custName{
+    margin-bottom: 1vw;
+    font-size: 18px;
+}
+
+#detailPage .custAddr{
+    font-size: 18px;
+}
+
+#detailPage .ordInf{
+    margin-top: 2.5vw;
+    margin-bottom: 1vw;
+    font-size: 27px;
+}
+
+#detailPage .ordTotPri{
+    position: absolute;
+    margin-top: 2.5vw;
+    bottom: 15%;
+    font-weight: 700;
+}
+
+#detailPage .ordCompl,
+#detailPage .ordDel{
+    width: 132px;
+    height: 56px;    
+    font-size: 20px;
+    font-weight: 700;
+    border: transparent;
+    padding: 10px;
+    border-radius: 15px;
+    color: black;
+}
+
+#detailPage .ordCompl:hover,
+#detailPage .ordDel:hover{
+    opacity: 0.9;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#detailPage .ordCompl{
+    position: absolute;
+    bottom: 6%;
+    left: 20%;
+    background-color: #12CA3A;
+    margin-right: 4vw;
+}
+
+#detailPage .ordDel{
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    background-color: red;
+}
+
+#pizzaBorder{
+    border-bottom: 1px solid grey;
+    width: 50%;
+}
+
+#detailPage .pizzaCFOr{
+    font-size: 18px;
+    line-height: 3vw;
+}
+
+#detailPage .ordTotPri{
+    position: absolute;
+    margin-top: 2.5vw;
+    font-size: 27px;
+    bottom: 17%;
+    font-weight: 700;
+}

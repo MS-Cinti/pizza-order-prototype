@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Cinti",
+  "license": "ISC",
+  "devDependencies": {},
+  "description": ""
+}
